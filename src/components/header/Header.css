@@ -1,0 +1,12 @@
+.navbar {
+  background-color: var(--main-bg-color1);
+}
+.navbar a {
+  color: var(--azure-color);
+}
+.dropdown-menu {
+  background-color: var(--main-bg-color2);
+}
+.dropdown-menu[data-bs-popper] {
+  top: 45px;
+}
