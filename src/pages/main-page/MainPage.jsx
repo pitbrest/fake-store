@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainPage';
+import './MainPage.css';
 
 function MainPage() {
   return <div>Main page</div>;

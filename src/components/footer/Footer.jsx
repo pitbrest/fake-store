@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   const actualYear = new Date().getFullYear();
   return (
-    <footer className="pb-2">
+    <footer className="py-2">
       <div className="container footer-container">
         <div className="copy">
           <i className="bi bi-c-circle mx-1"> </i>
@@ -15,8 +15,10 @@ function Footer() {
             href="https://github.com/pitbrest"
             target="_blank"
             rel="noreferrer"
-            className="bi bi-github"
-          ></a>
+            className="bi bi-github fs-3"
+          >
+            {' '}
+          </a>
         </div>
       </div>
     </footer>

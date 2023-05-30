@@ -2,7 +2,30 @@
   --main-bg-color1: teal;
   --main-bg-color2: #2badad;
   --azure-color: azure;
+  --transition-default: color 0.3s ease-in;
 }
 body {
   user-select: none;
+}
+main {
+  min-height: calc(100vh - 112px);
+}
+a {
+  cursor: pointer !important;
+}
+a:hover::before {
+  color: #befaf9 !important;
+  transition: var();
+  -webkit-transition: var();
+  -moz-transition: var();
+  -ms-transition: var();
+  -o-transition: var();
+}
+*,
+*::before {
+  transition: var(--transition-default) !important;
+  -webkit-transition: var(--transition-default) !important;
+  -moz-transition: var(--transition-default) !important;
+  -ms-transition: var(--transition-default) !important;
+  -o-transition: var(--transition-default) !important;
 }

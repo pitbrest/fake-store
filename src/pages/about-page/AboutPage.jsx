@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutPage';
+import './AboutPage.css';
 
 function AboutPage() {
   return <div>About page</div>;

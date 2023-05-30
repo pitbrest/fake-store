@@ -4,18 +4,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Header.css';
-import { Route, Routes, Link } from 'react-router-dom';
+// import { Route, Routes, Link } from 'react-router-dom';
 
 function Header() {
   return (
     <Navbar expand="md">
       <Container>
-        <Navbar.Brand href="#home">Fake-Store</Navbar.Brand>
+        <Navbar.Brand href="/">Fake-Store</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="flex-grow-0">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Главная</Nav.Link>
-            <Nav.Link href="#link">О нас</Nav.Link>
+            <Nav.Link href="/">Главная</Nav.Link>
+            <Nav.Link href="/about">О нас</Nav.Link>
             <NavDropdown title="Каталог" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

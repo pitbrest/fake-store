@@ -1,6 +1,7 @@
 footer {
   background-color: var(--main-bg-color1);
   color: var(--azure-color);
+  max-height: 56px;
 }
 .footer-container {
   display: flex;
