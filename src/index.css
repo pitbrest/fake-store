@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --main-bg-color1: teal;
   --main-bg-color2: #2badad;
@@ -6,6 +10,7 @@
 }
 body {
   user-select: none;
+  font-family: 'Sofia Sans Condensed', sans-serif;
 }
 main {
   min-height: calc(100vh - 112px);
