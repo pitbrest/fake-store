@@ -6,20 +6,25 @@
   --main-bg-color1: teal;
   --main-bg-color2: #2badad;
   --azure-color: azure;
-  --transition-default: color 0.3s ease-in;
-}
-body {
-  user-select: none;
-  font-family: 'Sofia Sans Condensed', sans-serif;
+  --transition-default: color 120ms ease-in;
 }
 main {
   min-height: calc(100vh - 112px);
 }
 a {
   cursor: pointer !important;
+  transition: var();
+  -webkit-transition: var();
+  -moz-transition: var();
+  -ms-transition: var();
+  -o-transition: var();
 }
-a:hover::before {
-  color: #befaf9 !important;
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a:hover {
   transition: var();
   -webkit-transition: var();
   -moz-transition: var();
