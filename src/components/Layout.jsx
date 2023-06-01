@@ -7,7 +7,7 @@ function Layout() {
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="container text-gray-700">
         <Outlet />
       </main>
       <Footer />

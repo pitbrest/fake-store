@@ -4,8 +4,35 @@ import './Header.css';
 
 function Header() {
   return (
-    <header className="bg-teal-600 text-slate-50 py-2 px-16">
-      <div className="section-container">header</div>
+    <header className="bg-gray-100 p-4">
+      <nav className="section-container flex items-center justify-between">
+        <h1 className="logo text-3xl">
+          <a href="/">Logo</a>
+        </h1>
+        <div className="navigation">
+          <a
+            href="/"
+            className="hover:bg-slate-50 hover:shadow-md p-3 text-lg font-medium active-btn"
+            aria-current="page"
+          >
+            На главную
+          </a>
+          <a
+            href="/"
+            className="hover:bg-slate-50 hover:shadow-md p-3 text-lg font-medium active-btn"
+            aria-current="page"
+          >
+            Контакты
+          </a>
+          <a
+            href="/"
+            className="hover:bg-slate-50 hover:shadow-md p-3 text-lg font-medium active-btn"
+            aria-current="page"
+          >
+            Каталог
+          </a>
+        </div>
+      </nav>
     </header>
   );
 }
