@@ -26,7 +26,6 @@ a {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 a:hover {
   transition: var();
   -webkit-transition: var();
@@ -34,20 +33,24 @@ a:hover {
   -ms-transition: var();
   -o-transition: var();
 }
-*,
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+/* *,
 *::before {
   transition: var(--transition-default) !important;
   -webkit-transition: var(--transition-default) !important;
   -moz-transition: var(--transition-default) !important;
   -ms-transition: var(--transition-default) !important;
   -o-transition: var(--transition-default) !important;
-}
+} */
 
-.active-btn {
+/* .active-btn {
   position: relative;
   cursor: pointer;
   transition-duration: 0.4s;
-  border-radius: 1.5em;
   -webkit-transition-duration: 0.4s;
 }
 .active-btn:after {
@@ -62,9 +65,9 @@ a:hover {
   transition: box-shadow, opacity 1s ease-in;
   box-shadow: 0 0 0 0 #f3f4f6;
   border-radius: 1.5em;
-}
+} */
 
-.active-btn:active:after {
+/* .active-btn:active:after {
   box-shadow: 0 0 7px 7px #eeeff0;
   position: absolute;
   left: 0;
@@ -72,7 +75,7 @@ a:hover {
   opacity: 1;
   transition: 0s;
   border-radius: 1.5em;
-}
+} */
 
 .active-btn:active {
   top: 1px;
