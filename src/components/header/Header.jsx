@@ -17,13 +17,13 @@ function Header() {
   const burgerState = isBurgerShowing ? 'open' : 'close';
 
   return (
-    <header className="bg-gray-100 py-2 px-10">
+    <header className="bg-teal-600 py-2 px-10 text-teal-50">
       <nav className="section-container flex items-center justify-between">
         <h1 className="logo text-3xl">
           <a href="/">Logo</a>
         </h1>
 
-        <ul className={`navigation gap-3 p-3 pt-5 ${burgerState}`}>
+        <ul className={`navigation gap-3 p-3 pt-5 ${burgerState} bg-teal-600`}>
           <li>
             <a
               href="/"
@@ -34,16 +34,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a
-              href="/"
-              className="hover:drop-shadow-md p-3 text-lg font-medium "
-              aria-current="page"
-            >
-              Контакты
-            </a>
-          </li>
-          <li>
-            <div className="relative inline-block text-left">
+            <div className="relative inline-block text-left dropdown-container ">
               <div>
                 <button
                   type="button"
@@ -55,7 +46,7 @@ function Header() {
                 >
                   Каталог
                   <svg
-                    className="-mr-1 h-5 w-5 text-gray-400"
+                    className="-mr-1 h-5 w-5 text-teal-50"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -70,7 +61,7 @@ function Header() {
               </div>
 
               <div
-                className={`absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${dropdownState} dropdown-container`}
+                className={`absolute right-0 z-10 mt-2 w-56 origin-top-right bg-teal-600 ring-1 ring-black ring-opacity-5 focus:outline-none ${dropdownState} dropdown-list`}
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="menu-button"
@@ -79,7 +70,7 @@ function Header() {
                 <div className="py-1" role="none">
                   <a
                     href="/"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:font-semibold"
+                    className="text-teal-5 block px-4 py-2 text-sm hover:font-semibold"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-0"
@@ -88,7 +79,7 @@ function Header() {
                   </a>
                   <a
                     href="/"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:font-semibold"
+                    className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"
@@ -97,7 +88,7 @@ function Header() {
                   </a>
                   <a
                     href="/"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:font-semibold"
+                    className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-2"
@@ -107,6 +98,15 @@ function Header() {
                 </div>
               </div>
             </div>
+          </li>
+          <li>
+            <a
+              href="/"
+              className="hover:drop-shadow-md p-3 text-lg font-medium "
+              aria-current="page"
+            >
+              Контакты
+            </a>
           </li>
         </ul>
         <label className="burger-container" htmlFor="burger-toggler">
