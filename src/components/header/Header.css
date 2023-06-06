@@ -1,5 +1,14 @@
+.active {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  color: #fffff0;
+}
+.navigation a:hover {
+  transform: skewX(10deg);
+}
+
 .dropdown-list {
-  top: 53px;
+  top: 41px;
   transition: linear 300ms;
 }
 .show {
@@ -12,7 +21,7 @@
 }
 .navigation {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 

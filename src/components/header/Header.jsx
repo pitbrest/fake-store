@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
-// import { Route, Routes, Link } from 'react-router-dom';
 
 function Header() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -26,17 +26,17 @@ function Header() {
           <a href="/">Logo</a>
         </h1>
 
-        <ul className={`navigation gap-3 p-3 pt-5 ${burgerState} bg-teal-600`}>
-          <li>
-            <a
-              href="/"
-              className="hover:drop-shadow-md p-3 text-lg font-medium "
+        <ul className={`navigation gap-3 p-3 ${burgerState} bg-teal-600`}>
+          <li className="hover:text-orange-100 ease-in duration-100">
+            <NavLink
+              to="/"
+              className="p-3 text-lg font-medium hover:-translate-y-1"
               aria-current="page"
             >
               На главную
-            </a>
+            </NavLink>
           </li>
-          <li>
+          <li className="hover:text-orange-100 ease-in duration-100">
             <div className="relative inline-block text-left dropdown-container ">
               <div
                 onClick={dropdownVisibilityToggle}
@@ -46,7 +46,7 @@ function Header() {
               >
                 <button
                   type="button"
-                  className="hover:drop-shadow-md p-3 pt-0 text-lg font-medium  inline-flex w-full justify-center gap-x-1.5"
+                  className="px-3 text-lg font-medium  inline-flex w-full justify-center gap-x-1.5"
                   id="menu-button"
                   aria-expanded="true"
                   aria-haspopup="true"
@@ -75,45 +75,45 @@ function Header() {
                 tabIndex="-1"
               >
                 <div className="py-1" role="none">
-                  <a
-                    href="/"
-                    className="text-teal-5 block px-4 py-2 text-sm hover:font-semibold"
+                  <NavLink
+                    to="/goods"
+                    className="text-teal-5 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-0"
                   >
                     Account settings
-                  </a>
-                  <a
-                    href="/"
-                    className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold"
+                  </NavLink>
+                  <NavLink
+                    to="/goods"
+                    className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"
                   >
                     Support
-                  </a>
-                  <a
-                    href="/"
-                    className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold"
+                  </NavLink>
+                  <NavLink
+                    to="/goods"
+                    className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-2"
                   >
                     License
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
           </li>
-          <li>
-            <a
-              href="/"
-              className="hover:drop-shadow-md p-3 text-lg font-medium "
+          <li className="hover:text-orange-100 ease-in duration-100">
+            <NavLink
+              to="/about"
+              className="p-3 text-lg font-medium "
               aria-current="page"
             >
               Контакты
-            </a>
+            </NavLink>
           </li>
         </ul>
         <label
