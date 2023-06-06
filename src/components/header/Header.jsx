@@ -12,6 +12,9 @@ function Header() {
   const dropdownState = isDropdownVisible ? 'show' : 'hide';
 
   const burgerToggle = () => {
+    if (isBurgerShowing) {
+      setIsDropdownVisible(false);
+    }
     setIsBurgerShowing(!isBurgerShowing);
   };
   const burgerState = isBurgerShowing ? 'open' : 'close';
@@ -35,14 +38,18 @@ function Header() {
           </li>
           <li>
             <div className="relative inline-block text-left dropdown-container ">
-              <div>
+              <div
+                onClick={dropdownVisibilityToggle}
+                role="button"
+                tabIndex="0"
+                onKeyDown={() => {}}
+              >
                 <button
                   type="button"
                   className="hover:drop-shadow-md p-3 pt-0 text-lg font-medium  inline-flex w-full justify-center gap-x-1.5"
                   id="menu-button"
                   aria-expanded="true"
                   aria-haspopup="true"
-                  onClick={dropdownVisibilityToggle}
                 >
                   Каталог
                   <svg
@@ -109,31 +116,14 @@ function Header() {
             </a>
           </li>
         </ul>
-        <label className="burger-container" htmlFor="burger-toggler">
-          <input
-            className="hidden"
-            id="burger-toggler"
-            type="checkbox"
-            onChange={burgerToggle}
-          />
+        <label
+          className="burger-container"
+          htmlFor="burger-toggler"
+          onChange={burgerToggle}
+        >
+          <input className="hidden" id="burger-toggler" type="checkbox" />
           <div className="burger-button"> </div>
         </label>
-
-        {/* <div className={`burger-container ${burgerState}`}>
-          <section className="top-nav">
-            <label className="menu-button-container" htmlFor="menu-toggle">
-              <input id="menu-toggle" type="checkbox" onChange={burgerToggle} />
-              <div className="menu-button"> </div>
-            </label>
-            <ul className="menu">
-              <li>One</li>
-              <li>Two</li>
-              <li>Three</li>
-              <li>Four</li>
-              <li>Five</li>
-            </ul>
-          </section>
-        </div> */}
       </nav>
     </header>
   );
