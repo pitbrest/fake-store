@@ -33,7 +33,7 @@ function Header() {
               className="p-3 text-lg font-medium hover:-translate-y-1"
               aria-current="page"
             >
-              На главную
+              Home
             </NavLink>
           </li>
           <li className="hover:text-orange-100 ease-in duration-100">
@@ -51,7 +51,7 @@ function Header() {
                   aria-expanded="true"
                   aria-haspopup="true"
                 >
-                  Каталог
+                  Сatalogue
                   <svg
                     className="-mr-1 h-5 w-5 text-teal-50"
                     viewBox="0 0 20 20"
@@ -76,31 +76,44 @@ function Header() {
               >
                 <div className="py-1" role="none">
                   <NavLink
-                    to="/goods"
+                    to="/catalogue/electronics"
                     className="text-teal-5 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-0"
+                    onClick={dropdownVisibilityToggle}
                   >
-                    Account settings
+                    Electronics
                   </NavLink>
                   <NavLink
-                    to="/goods"
+                    to="/catalogue/jewelery"
                     className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"
+                    onClick={dropdownVisibilityToggle}
                   >
-                    Support
+                    Jewelery
                   </NavLink>
                   <NavLink
-                    to="/goods"
+                    to="/catalogue/men's-clothing"
                     className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-2"
+                    onClick={dropdownVisibilityToggle}
                   >
-                    License
+                    Men&apos;s clothing
+                  </NavLink>
+                  <NavLink
+                    to="/catalogue/women's-clothing"
+                    className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
+                    role="menuitem"
+                    tabIndex="-1"
+                    id="menu-item-2"
+                    onClick={dropdownVisibilityToggle}
+                  >
+                    Women&apos;s clothing
                   </NavLink>
                 </div>
               </div>
@@ -112,7 +125,7 @@ function Header() {
               className="p-3 text-lg font-medium "
               aria-current="page"
             >
-              Контакты
+              Contacts
             </NavLink>
           </li>
         </ul>
