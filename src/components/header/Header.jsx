@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
@@ -23,7 +23,7 @@ function Header() {
     <header className="bg-teal-600 py-2 px-10 text-teal-50">
       <nav className="section-container flex items-center justify-between">
         <h1 className="logo text-3xl">
-          <a href="/">Logo</a>
+          <Link to="/">Logo</Link>
         </h1>
 
         <ul className={`navigation gap-3 p-3 ${burgerState} bg-teal-600`}>

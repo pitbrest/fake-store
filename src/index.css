@@ -10,6 +10,7 @@
 }
 body {
   font-family: 'Shantell Sans', cursive;
+  user-select: none;
 }
 main {
   min-height: calc(100vh - 116px);
