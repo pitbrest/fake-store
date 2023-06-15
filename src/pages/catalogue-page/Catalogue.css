@@ -1,0 +1,5 @@
+.goods-container {
+  display: grid;
+  grid-template: auto / repeat(auto-fit, minmax(310px, 1fr));
+  gap: 2rem;
+}

@@ -7,7 +7,7 @@ function Layout() {
   return (
     <>
       <Header />
-      <main className="container text-gray-700">
+      <main className="container mx-auto px-2 py-10 text-gray-700">
         <Outlet />
       </main>
       <Footer />
