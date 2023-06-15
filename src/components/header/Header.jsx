@@ -96,7 +96,7 @@ function Header() {
                     Jewelery
                   </NavLink>
                   <NavLink
-                    to="/catalogue/men's-clothing"
+                    to="/catalogue/men's clothing"
                     className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"
@@ -106,7 +106,7 @@ function Header() {
                     Men&apos;s clothing
                   </NavLink>
                   <NavLink
-                    to="/catalogue/women's-clothing"
+                    to="/catalogue/women's clothing"
                     className="text-teal-50 block px-4 py-2 text-sm hover:font-semibold hover:text-orange-100 ease-in duration-100"
                     role="menuitem"
                     tabIndex="-1"

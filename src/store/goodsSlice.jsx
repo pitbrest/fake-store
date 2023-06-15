@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getGoods = createAsyncThunk(
   'storeState/getGoods',
-  async function (category) {
+  async (category) => {
     const response = await fetch(
       `https://fakestoreapi.com/products/category/${category}`,
     );
@@ -32,15 +32,17 @@ const goodsSlice = createSlice({
     cartItemCountHandler() {},
   },
   extraReducers: {
-    [getGoods.pending]: (state) => {
-      state.status = 'pendidng';
-      state.error = null;
-    },
-    [getGoods.fulfilled]: (state, action) => {
-      state.status = 'fulfilled';
-      state.goods = action.payload;
-    },
-    [getGoods.rejected]: (state, action) => {},
+    [getGoods.pending]: (state) => ({
+      ...state,
+      status: 'pending',
+      state: null,
+    }),
+    [getGoods.fulfilled]: (state, action) => ({
+      ...state,
+      status: 'fulfilled',
+      goods: action.payload,
+    }),
+    [getGoods.rejected]: () => {},
   },
 });
 
