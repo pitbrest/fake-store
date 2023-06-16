@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { Ripple, initTE } from 'tw-elements';
-import { Navigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function ItemCard(prop) {
   const { id, title, price, image } = prop;
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const newPath = `${pathname.toString()}/${id.toString()}`;
 
   useEffect(() => initTE({ Ripple }));
@@ -13,7 +14,7 @@ function ItemCard(prop) {
     <div
       className="flex flex-col justify-start rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
       id={id}
-      onClick={<Navigate to={newPath} />}
+      onClick={() => navigate(newPath, { state: prop })}
       aria-hidden="true"
     >
       <a href="#!">

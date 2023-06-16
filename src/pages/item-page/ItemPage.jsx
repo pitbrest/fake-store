@@ -1,7 +1,9 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-function ItemPage(prop) {
-  const { title, price, image, description, rate, count } = prop;
+function ItemPage() {
+  const { state } = useLocation();
+  const { title, price, image, description, rate, count } = state;
 
   return (
     <div>
