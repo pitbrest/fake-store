@@ -30,7 +30,7 @@ function Catalogue() {
       ))}
       <button
         type="button"
-        className="top-arrow rounded-full inline-block w-min border-2 border-teal-700"
+        className="top-arrow rounded-full w-min border-2 border-teal-700 lg:hidden"
         onClick={() =>
           window.scrollTo({
             top: 0,
@@ -43,7 +43,7 @@ function Catalogue() {
       </button>
       <button
         type="button"
-        className="bottom-arrow rounded-full inline-block w-min border-2 border-teal-700"
+        className="bottom-arrow rounded-full inline-block w-min border-2 border-teal-700 lg:hidden"
         onClick={() =>
           window.scrollTo({
             top: document.body.scrollHeight,
