@@ -19,6 +19,11 @@ function Header() {
   };
   const burgerState = isBurgerShowing ? 'open' : 'close';
 
+  const burgerActionsTogler = () => {
+    dropdownVisibilityToggle();
+    burgerToggle();
+  };
+
   return (
     <header className="bg-teal-600 py-2 px-10 text-teal-50">
       <nav className="section-container flex items-center justify-between">
@@ -32,6 +37,7 @@ function Header() {
               to="/"
               className="p-3 text-lg font-medium hover:-translate-y-1"
               aria-current="page"
+              onClick={burgerToggle}
             >
               Home
             </NavLink>
@@ -81,7 +87,7 @@ function Header() {
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-0"
-                    onClick={dropdownVisibilityToggle}
+                    onClick={burgerActionsTogler}
                   >
                     Electronics
                   </NavLink>
@@ -91,7 +97,7 @@ function Header() {
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"
-                    onClick={dropdownVisibilityToggle}
+                    onClick={burgerActionsTogler}
                   >
                     Jewelery
                   </NavLink>
@@ -101,7 +107,7 @@ function Header() {
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-2"
-                    onClick={dropdownVisibilityToggle}
+                    onClick={burgerActionsTogler}
                   >
                     Men&apos;s clothing
                   </NavLink>
@@ -111,7 +117,7 @@ function Header() {
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-2"
-                    onClick={dropdownVisibilityToggle}
+                    onClick={burgerActionsTogler}
                   >
                     Women&apos;s clothing
                   </NavLink>
@@ -124,6 +130,7 @@ function Header() {
               to="/about"
               className="p-3 text-lg font-medium "
               aria-current="page"
+              onClick={burgerToggle}
             >
               Contacts
             </NavLink>
@@ -134,7 +141,12 @@ function Header() {
           htmlFor="burger-toggler"
           onChange={burgerToggle}
         >
-          <input className="hidden" id="burger-toggler" type="checkbox" />
+          <input
+            className="hidden"
+            id="burger-toggler"
+            type="checkbox"
+            checked={isBurgerShowing}
+          />
           <div className="burger-button"> </div>
         </label>
       </nav>

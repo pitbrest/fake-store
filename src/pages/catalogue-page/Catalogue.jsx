@@ -24,9 +24,36 @@ function Catalogue() {
           description={item.description}
           image={item.image}
           count={item.rating.count}
+          rate={item.rating.rate}
           key={item.id}
         />
       ))}
+      <button
+        type="button"
+        className="top-arrow rounded-full inline-block w-min border-2 border-teal-700"
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          })
+        }
+      >
+        ▲
+      </button>
+      <button
+        type="button"
+        className="bottom-arrow rounded-full inline-block w-min border-2 border-teal-700"
+        onClick={() =>
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            left: 0,
+            behavior: 'smooth',
+          })
+        }
+      >
+        ▼
+      </button>
     </div>
   );
 }

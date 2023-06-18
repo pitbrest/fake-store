@@ -6,7 +6,7 @@ function ItemCard(prop) {
   const { id, title, price, image } = prop;
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const newPath = `${pathname.toString()}/${id.toString()}`;
+  const newPath = `${pathname}/${id}`;
 
   useEffect(() => initTE({ Ripple }));
 
@@ -17,9 +17,8 @@ function ItemCard(prop) {
       onClick={() => navigate(newPath, { state: prop })}
       aria-hidden="true"
     >
-      <a href="#!">
-        <img className="rounded-t-lg mx-auto max-h-48" src={image} alt="" />
-      </a>
+      <img className="rounded-t-lg mx-auto max-h-48" src={image} alt="" />
+
       <div className="p-6">
         <h5 className="mb-2 text font-medium leading-tight text-neutral-800 dark:text-neutral-50 pb-10 h-14 ">
           {title}
