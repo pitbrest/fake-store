@@ -146,6 +146,7 @@ function Header() {
             id="burger-toggler"
             type="checkbox"
             checked={isBurgerShowing}
+            readOnly
           />
           <div className="burger-button"> </div>
         </label>

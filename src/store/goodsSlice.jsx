@@ -27,7 +27,9 @@ const goodsSlice = createSlice({
   },
   reducers: {
     // getGoods(state, action) {},
-    addItemToCart() {},
+    addItemToCart(state, action) {
+      state.shoppingСart.push(action.payload.item);
+    },
     removeItemFromCart() {},
     cartItemCountHandler() {},
   },

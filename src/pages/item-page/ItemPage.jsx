@@ -17,7 +17,7 @@ function ItemPage() {
           alt=""
           onClick={() => navigate(-1)}
           aria-hidden
-          className="absolute top-0 left-0 w-12 hover:border-slate-600 border-2 border-transparent rounded-full active:scale-95 bg-teal-50 active:bg-teal-100"
+          className="absolute top-0 left-0 w-12 hover:border-slate-600 border-2 border-transparent rounded-full active:scale-95 "
         />
       </div>
       <div className="description">
