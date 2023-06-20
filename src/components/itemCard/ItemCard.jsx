@@ -11,7 +11,11 @@ function ItemCard(prop) {
   const newPath = `${pathname}/${id}`;
   const dispatch = useDispatch();
   const shoppingСart = useSelector((state) => state.storeState.shoppingСart);
-  const checkingCart = !!shoppingСart.filter((item) => item.id === id).length;
+  const checkingCart = shoppingСart.filter((item) => item.id === id).length;
+  const btnFontColorHandler = !checkingCart
+    ? { color: 'white' }
+    : { color: 'rgb(255 195 0)' };
+  const btnText = !checkingCart ? 'Add to cart' : 'Already added';
 
   useEffect(() => initTE({ Ripple }));
 
@@ -34,20 +38,21 @@ function ItemCard(prop) {
           <div className="relative">
             <button
               type="button"
-              className="inline-block rounded bg-teal-700 px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-teal-500 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-teal-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-teal-400 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] pr-5"
+              style={btnFontColorHandler}
+              className="inline-block rounded bg-teal-700 px-4 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal  shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-teal-500 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-teal-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-teal-400 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] w-36"
               data-te-ripple-init
               data-te-ripple-color="light"
               onClick={() => {
                 dispatch(addItemToCart({ item: prop }));
               }}
             >
-              Add to cart
+              {btnText}
             </button>
-            {checkingCart && (
+            {/* {checkingCart && (
               <span className="absolute -top-2 -right-3 text-red-400 text-3xl">
                 &#10004;
               </span>
-            )}
+            )} */}
           </div>
           <button
             type="button"

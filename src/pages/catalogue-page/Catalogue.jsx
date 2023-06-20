@@ -8,11 +8,18 @@ import './Catalogue.css';
 function Catalogue() {
   const { category } = useParams();
   const dispatch = useDispatch();
-  const goods = useSelector((state) => state.storeState.goods);
+  const { goods, shoppingСart } = useSelector((state) => state.storeState);
+
+  const saveUserCartData = () => {
+    const newUserCartData = JSON.stringify(shoppingСart.map((item) => item.id));
+    localStorage.userCart = newUserCartData;
+  };
 
   useEffect(() => {
     dispatch(getGoods(category));
   }, [category, dispatch]);
+
+  useEffect(() => saveUserCartData());
 
   return (
     <div className="goods-container">

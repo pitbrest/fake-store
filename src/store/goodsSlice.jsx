@@ -28,34 +28,29 @@ const goodsSlice = createSlice({
   reducers: {
     // getGoods(state, action) {},
     addItemToCart(state, action) {
-      state.shoppingСart.push(action.payload.item);
       const currentItemId = action.payload.item.id;
+      const cartChecking = state.shoppingСart.filter(
+        (item) => item.id === currentItemId,
+      ).length;
 
-      if (!localStorage.userCart) {
-        localStorage.userCart = JSON.stringify([
-          { id: currentItemId, count: 1 },
-        ]);
-      } else {
-        const localStorCartData = JSON.parse(localStorage.userCart);
-        localStorCartData.push({ id: currentItemId, count: 1 });
-        localStorage.userCart = JSON.stringify(localStorCartData);
-        // localStorCartData.push({ id: currentItemId, count: 1 });
-        console.log(localStorCartData);
-
-        // const checkingStatus = localStorCartData.filter(
-        //   (item) => item.id === currentItemId,
-        // ).length;
-        // if (!checkingStatus) {
-        //   localStorCartData.push({ id: currentItemId, count: 1 });
-        //   console.log(localStorCartData);
-        // }
-        // localStorage.userCart = !checkingStatus
-        //   ? JSON.stringify(
-        //       localStorCartData.push({ id: currentItemId, count: 1 }),
-        //     )
-        //   : JSON.stringify(localStorCartData);
+      if (!cartChecking) {
+        state.shoppingСart.push(action.payload.item);
       }
-      console.log(localStorage.userCart);
+
+      // if (!localStorage.userCart) {
+      //   localStorage.userCart = JSON.stringify([
+      //     { id: currentItemId, count: 1 },
+      //   ]);
+      // } else {
+      //   const localStorCartData = JSON.parse(localStorage.userCart);
+      //   const checkingItem = localStorCartData.filter(
+      //     (item) => item.id === currentItemId,
+      //   ).length;
+      //   if (!checkingItem) {
+      //     localStorCartData.push({ id: currentItemId, count: 1 });
+      //     localStorage.userCart = JSON.stringify(localStorCartData);
+      //   }
+      // }
     },
     removeItemFromCart() {},
     cartItemCountHandler() {},
