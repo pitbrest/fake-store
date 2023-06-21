@@ -11,7 +11,7 @@ function Catalogue() {
   const { goods, shoppingСart } = useSelector((state) => state.storeState);
 
   const saveUserCartData = () => {
-    const newUserCartData = JSON.stringify(shoppingСart.map((item) => item.id));
+    const newUserCartData = JSON.stringify(shoppingСart);
     localStorage.userCart = newUserCartData;
   };
 

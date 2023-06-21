@@ -23,7 +23,9 @@ const goodsSlice = createSlice({
     ],
     status: null,
     error: null,
-    shoppingСart: [],
+    shoppingСart: localStorage.userCart
+      ? JSON.parse(localStorage.userCart)
+      : [],
   },
   reducers: {
     // getGoods(state, action) {},
@@ -34,23 +36,8 @@ const goodsSlice = createSlice({
       ).length;
 
       if (!cartChecking) {
-        state.shoppingСart.push(action.payload.item);
+        state.shoppingСart.push({ ...action.payload.item, count: 1 });
       }
-
-      // if (!localStorage.userCart) {
-      //   localStorage.userCart = JSON.stringify([
-      //     { id: currentItemId, count: 1 },
-      //   ]);
-      // } else {
-      //   const localStorCartData = JSON.parse(localStorage.userCart);
-      //   const checkingItem = localStorCartData.filter(
-      //     (item) => item.id === currentItemId,
-      //   ).length;
-      //   if (!checkingItem) {
-      //     localStorCartData.push({ id: currentItemId, count: 1 });
-      //     localStorage.userCart = JSON.stringify(localStorCartData);
-      //   }
-      // }
     },
     removeItemFromCart() {},
     cartItemCountHandler() {},

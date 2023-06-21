@@ -81,7 +81,7 @@
 @media (max-width: 768px) {
   .navigation {
     position: absolute;
-    top: 53px;
+    top: 57px;
     right: 0;
     flex-direction: column;
     align-items: flex-start;
