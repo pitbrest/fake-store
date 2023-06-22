@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Header.css';
 
 function Header() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [isBurgerShowing, setIsBurgerShowing] = useState(false);
+  const { shoppingСart } = useSelector((state) => state.storeState);
 
   const dropdownVisibilityToggle = () => {
     setIsDropdownVisible(!isDropdownVisible);
@@ -25,7 +27,7 @@ function Header() {
   };
 
   return (
-    <header className="bg-teal-600 py-2 px-10 text-teal-50">
+    <header className="bg-teal-600 py-2 px-10 text-teal-50 fixed top-0 w-full">
       <nav className="section-container flex items-center justify-between">
         <h1 className="logo text-3xl">
           <Link to="/">Logo</Link>
@@ -164,7 +166,9 @@ function Header() {
             <circle cx="9" cy="21" r="1" /> <circle cx="20" cy="21" r="1" />{' '}
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
           </svg>
-          <span className="absolute -top-3 -right-6 font-bold text-xl">12</span>
+          <span className="absolute -top-2 -right-6 font-bold text-xl">
+            {shoppingСart.length}
+          </span>
         </div>
       </nav>
     </header>
