@@ -152,7 +152,7 @@ function Header() {
           />
           <div className="burger-button"> </div>
         </label>
-        <div className="cart-container relative">
+        <div className="cart-container relative cursor-pointer">
           <svg
             className="h-10 w-10 text-white"
             viewBox="0 0 24 24"

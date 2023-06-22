@@ -1,9 +1,9 @@
 import React from 'react';
-import './Loading.css';
+import './Preloader.css';
 
-function Loading() {
+function Preloader() {
   return (
-    <div className="loader-container">
+    <div className="preloader-container">
       {' '}
       <div className="pl">
         <div className="pl__outer-ring" />
@@ -20,4 +20,4 @@ function Loading() {
   );
 }
 
-export default Loading;
+export default Preloader;

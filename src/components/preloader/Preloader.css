@@ -1,14 +1,16 @@
-.loader-container {
+.preloader-container {
   background-color: hsl(0, 0%, 100%);
   font: 0.5em/1.5 sans-serif;
   height: 30vh;
   display: grid;
   place-items: center;
-  font-size: calc(5px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+  /* font-size: calc(5px + (20 - 16) * (100vw - 320px) / (1280 - 320)); */
+  font-size: 8px;
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  padding-top: 20rem;
 }
 .pl,
 .pl__ball,
@@ -52,18 +54,11 @@
 }
 .pl__ball-inner-shadow {
   animation-name: ballInnerShadow;
-  box-shadow: 0 0.1em 0.2em hsla(160, 96%, 21%, 0.3),
-    0 0 0.2em hsla(0, 0%, 0%, 0.1) inset,
-    0 -1em 0.5em hsla(0, 0%, 0%, 0.15) inset;
-  width: 100%;
-  height: 100%;
-
-  /* animation-name: ballInnerShadow;
   box-shadow: 0 0.1em 0.2em hsla(0, 0%, 0%, 0.3),
     0 0 0.2em hsla(0, 0%, 0%, 0.1) inset,
     0 -1em 0.5em hsla(0, 0%, 0%, 0.15) inset;
   width: 100%;
-  height: 100%; */
+  height: 100%;
 }
 .pl__ball-outer-shadow {
   animation-name: ballOuterShadow;
