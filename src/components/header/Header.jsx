@@ -27,7 +27,7 @@ function Header() {
   };
 
   return (
-    <header className="bg-teal-600 py-2 px-10 text-teal-50 fixed top-0 w-full">
+    <header className="bg-teal-600 py-2 px-10 text-teal-50 fixed top-0 w-full z-10 opacity-95">
       <nav className="section-container flex items-center justify-between">
         <h1 className="logo text-3xl">
           <Link to="/">Logo</Link>
@@ -152,7 +152,7 @@ function Header() {
           />
           <div className="burger-button"> </div>
         </label>
-        <div className="cart-container relative cursor-pointer">
+        <Link className="cart-container relative cursor-pointer" to="/cart">
           <svg
             className="h-10 w-10 text-white"
             viewBox="0 0 24 24"
@@ -169,7 +169,7 @@ function Header() {
           <span className="absolute -top-2 -right-6 font-bold text-xl">
             {shoppingСart.length}
           </span>
-        </div>
+        </Link>
       </nav>
     </header>
   );

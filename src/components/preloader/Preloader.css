@@ -43,7 +43,8 @@
 .pl__ball-outer-shadow,
 .pl__ball-texture:before,
 .pl__track-cover {
-  animation: ball 3s linear infinite;
+  animation: ball 2s linear infinite;
+  -webkit-animation: ball 2s linear infinite;
 }
 .pl__ball {
   top: calc(50% - 1.25em);

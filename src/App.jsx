@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import { About, Catalogue, ItemPage, Main, NotFoundPage } from './pages';
+import CartPage from './pages/cart-page/CartPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="catalogue/:category" element={<Catalogue />} />
         <Route path="catalogue/:category/:id" element={<ItemPage />} />
         <Route path="about" element={<About />} />
+        <Route path="cart" element={<CartPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

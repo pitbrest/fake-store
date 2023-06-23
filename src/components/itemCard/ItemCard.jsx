@@ -25,7 +25,7 @@ function ItemCard(prop) {
       aria-hidden="true"
     >
       <img className="rounded-t-lg mx-auto h-48" src={image} alt="" />
-      <div className="p-6">
+      <div className="md:p-6 p-3 pt-5 text-center">
         <h5 className="mb-2 text font-medium leading-tight text-neutral-800 dark:text-neutral-50 pb-10 h-24 ">
           {title}
         </h5>
