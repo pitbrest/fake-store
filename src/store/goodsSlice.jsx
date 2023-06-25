@@ -29,6 +29,10 @@ const goodsSlice = createSlice({
   },
   reducers: {
     // getGoods(state, action) {},
+    saveUserCartData(state) {
+      const newUserCartData = JSON.stringify(state.shoppingСart);
+      localStorage.userCart = newUserCartData;
+    },
     addItemToCart(state, action) {
       const currentItemId = action.payload.item.id;
       const cartChecking = state.shoppingСart.filter(
@@ -39,8 +43,39 @@ const goodsSlice = createSlice({
         state.shoppingСart.push({ ...action.payload.item, count: 1 });
       }
     },
-    removeItemFromCart() {},
-    cartItemCountHandler() {},
+    removeItemFromCart(state, action) {
+      const currentItemId = action.payload.item.id;
+      state.shoppingСart = [
+        ...state.shoppingСart.filter((item) => item.id !== currentItemId),
+      ];
+    },
+    cartItemCountHandler(state, action) {
+      const currentItemId = action.payload.item.id;
+      if (action.payload.action === 'dec') {
+        state.shoppingСart = [
+          ...state.shoppingСart.map((item) =>
+            item.id === currentItemId
+              ? {
+                  ...item,
+                  count: item.count - 1 === 0 ? item.count : item.count - 1,
+                }
+              : { ...item },
+          ),
+        ];
+      }
+      if (action.payload.action === 'inc') {
+        state.shoppingСart = [
+          ...state.shoppingСart.map((item) =>
+            item.id === currentItemId
+              ? {
+                  ...item,
+                  count: item.count + 1,
+                }
+              : { ...item },
+          ),
+        ];
+      }
+    },
   },
   extraReducers: {
     [getGoods.pending]: (state) => ({
@@ -57,7 +92,11 @@ const goodsSlice = createSlice({
   },
 });
 
-export const { addItemToCart, removeItemFromCart, cartItemCountHandler } =
-  goodsSlice.actions;
+export const {
+  saveUserCartData,
+  addItemToCart,
+  removeItemFromCart,
+  cartItemCountHandler,
+} = goodsSlice.actions;
 
 export default goodsSlice.reducer;

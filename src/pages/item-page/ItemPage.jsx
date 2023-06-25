@@ -1,11 +1,23 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import back from '../../components/icon-back.png';
+import { saveUserCartData, addItemToCart } from '../../store/goodsSlice';
 
 function ItemPage() {
   const { state } = useLocation();
-  const { title, price, image, description, rate, count } = state;
+  const { id, title, price, image, description, rate, count } = state;
   const navigate = useNavigate();
+
+  const { shoppingСart } = useSelector((store) => store.storeState);
+
+  const dispatch = useDispatch();
+
+  const checkingCart = shoppingСart.filter((item) => item.id === id).length;
+  const btnFontColorHandler = !checkingCart
+    ? { color: 'white' }
+    : { color: 'rgb(255 195 0)' };
+  const btnText = !checkingCart ? 'Add to cart' : 'Already added';
 
   return (
     <div className="max-w-lg flex flex-col justify-center mx-auto ">
@@ -35,11 +47,16 @@ function ItemPage() {
       </div>
       <button
         type="button"
-        className="inline-block rounded bg-teal-700 px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-teal-500 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-teal-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-teal-400 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.1)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] mt-4"
+        className="inline-block rounded bg-teal-700 px-4 pb-2 pt-2.5 text-xs uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-teal-500 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-teal-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-teal-400 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.1)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.1),0_4px_18px_0_rgba(59,113,202,0.1)] mt-4 font-bold"
         data-te-ripple-init
         data-te-ripple-color="rgba(20, 184, 166, 0.1)"
+        onClick={() => {
+          dispatch(addItemToCart({ item: state }));
+          dispatch(saveUserCartData());
+        }}
+        style={btnFontColorHandler}
       >
-        Add to cart
+        {btnText}
       </button>
     </div>
   );

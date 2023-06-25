@@ -10,20 +10,11 @@ import PageNavigation from '../../components/page-navigation/PageNavigation';
 function Catalogue() {
   const { category } = useParams();
   const dispatch = useDispatch();
-  const { goods, shoppingСart, status } = useSelector(
-    (state) => state.storeState,
-  );
-
-  const saveUserCartData = () => {
-    const newUserCartData = JSON.stringify(shoppingСart);
-    localStorage.userCart = newUserCartData;
-  };
+  const { goods, status } = useSelector((state) => state.storeState);
 
   useEffect(() => {
     dispatch(getGoods(category));
   }, [category, dispatch]);
-
-  useEffect(() => saveUserCartData());
 
   if (status === 'pending') {
     return <Preloader />;
