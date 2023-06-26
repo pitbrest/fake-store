@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
+import PageNavigation from '../../components/page-navigation/PageNavigation';
 import './CartPage.css';
 
 function CartPage() {
@@ -20,6 +21,7 @@ function CartPage() {
             price={item.price}
             image={item.image}
             count={item.count}
+            category={item.category}
           />
         ))}
       </div>
@@ -29,6 +31,7 @@ function CartPage() {
           {totalPrice} €
         </span>
       </p>
+      <PageNavigation />
     </div>
   );
 }

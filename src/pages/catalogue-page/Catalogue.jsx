@@ -32,6 +32,7 @@ function Catalogue() {
           count={item.rating.count}
           rate={item.rating.rate}
           key={item.id}
+          category={item.category}
         />
       ))}
       <PageNavigation />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   saveUserCartData,
   removeItemFromCart,
@@ -7,32 +8,41 @@ import {
 } from '../../store/goodsSlice';
 
 function CartItem(prop) {
-  const { title, price, image, count } = prop;
+  const { id, title, price, image, count, category } = prop;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="cartItem flex lg:justify-between  justify-around gap-x-2 gap-y-4 lg:gap-10 py-5 w-full items-center flex-wrap lg:flex-nowrap">
       <img src={image} alt="item" className="w-14" />
-      <p className="  basis-3/5  flex-grow-0 flex-shrink-0 lg:text-lg text-sm">
+      <p
+        className="basis-3/5  flex-grow-0 flex-shrink-0 lg:text-lg text-sm"
+        onClick={() =>
+          navigate(`/catalogue/${category}/${id}`, { state: prop })
+        }
+        aria-hidden
+      >
         {title}
       </p>
-      <div className="item-handler flex gap-8 text-center">
-        <div className="countToggle-container flex justify-center align-middle gap-3 font-bold bg-gray-50 px-2 py-1 rounded-lg">
+      <div className="item-handler flex gap-8 ">
+        <div className="countToggle-container flex justify-between align-middle gap-3 font-bold bg-gray-50 px-2 py-1 rounded-lg">
           <span
             className="cursor-pointer  px-2"
-            onClick={() =>
-              dispatch(cartItemCountHandler({ item: prop, action: 'dec' }))
-            }
+            onClick={() => {
+              dispatch(cartItemCountHandler({ item: prop, action: 'dec' }));
+              dispatch(saveUserCartData());
+            }}
             aria-hidden
           >
             -
           </span>
-          <p className="item-count text-xl">{count}</p>
+          <p className="item-count text-xl w-12">{count}</p>
           <span
             className="cursor-pointer p-1"
-            onClick={() =>
-              dispatch(cartItemCountHandler({ item: prop, action: 'inc' }))
-            }
+            onClick={() => {
+              dispatch(cartItemCountHandler({ item: prop, action: 'inc' }));
+              dispatch(saveUserCartData());
+            }}
             aria-hidden
           >
             +

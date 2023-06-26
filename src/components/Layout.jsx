@@ -7,7 +7,7 @@ function Layout() {
   return (
     <>
       <Header />
-      <main className="lg:container mx-auto px-2 py-10 md:pt-28 pt-14 text-gray-700">
+      <main className="lg:container mx-auto px-2 pb-8 md:pt-28 pt-20 text-gray-700">
         <Outlet />
       </main>
       <Footer />
