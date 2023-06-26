@@ -1,0 +1,13 @@
+.top-arrow,
+.bottom-arrow {
+  color: teal;
+  position: fixed;
+  top: 46vh;
+  right: 1rem;
+  padding: 3px 8px 4px 8px;
+  background-color: #fdfff582;
+}
+.bottom-arrow {
+  top: 51vh;
+  padding: 5px 8px 2px 8px;
+}

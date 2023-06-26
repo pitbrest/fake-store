@@ -38,7 +38,7 @@ function ItemPage() {
         <div className="flex justify-between font-bold">
           <div>
             <p>rate: {rate}</p>
-            <p>count: {count}</p>
+            <p>in stock: {count}</p>
           </div>
           <span className="underline underline-offset-4 text-rose-700 text-xl">
             Price: {price} €

@@ -1,4 +1,5 @@
 import React from 'react';
+import './PageNavigation.css';
 
 function PageNavigation() {
   return (

@@ -22,6 +22,7 @@ function CartPage() {
             image={item.image}
             count={item.count}
             category={item.category}
+            rate={item.rate}
           />
         ))}
       </div>
