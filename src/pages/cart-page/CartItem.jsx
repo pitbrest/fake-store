@@ -13,10 +13,10 @@ function CartItem(prop) {
   const navigate = useNavigate();
 
   return (
-    <div className="cartItem flex lg:justify-between  justify-around gap-x-2 gap-y-4 lg:gap-10 py-5 w-full items-center flex-wrap lg:flex-nowrap">
+    <div className="cartItem flex lg:justify-between justify-around gap-x-2 gap-y-4 lg:gap-10 py-5 w-full items-center flex-wrap lg:flex-nowrap border-b-2 border-neutral-200 ">
       <img src={image} alt="item" className="w-14" />
       <p
-        className="basis-3/5  flex-grow-0 flex-shrink-0 lg:text-lg text-sm"
+        className="basis-2/5  flex-grow-0 flex-shrink-0 lg:text-lg text-sm"
         onClick={() =>
           navigate(`/catalogue/${category}/${id}`, { state: prop })
         }
@@ -24,8 +24,8 @@ function CartItem(prop) {
       >
         {title}
       </p>
-      <div className="item-handler flex gap-8 ">
-        <div className="countToggle-container flex justify-between align-middle gap-3 font-bold bg-gray-50 px-2 py-1 rounded-lg">
+      <div className="item-handler flex sm:gap-8 gap-4">
+        <div className="countToggle-container flex justify-between align-middle gap-2 sm:gap-3 font-bold bg-gray-50 px-2 py-1 rounded-lg">
           <span
             className="cursor-pointer  px-2"
             onClick={() => {
@@ -36,7 +36,7 @@ function CartItem(prop) {
           >
             -
           </span>
-          <p className="item-count text-xl w-12">{count}</p>
+          <p className="item-count text-xl w-12 text-center">{count}</p>
           <span
             className="cursor-pointer p-1"
             onClick={() => {
@@ -48,7 +48,7 @@ function CartItem(prop) {
             +
           </span>
         </div>
-        <p className="font-bold text-xl w-32 flex-grow-0 flex-shrink-0">
+        <p className="font-bold text-xl text-center w-32 flex-grow-0 flex-shrink-0">
           {(price * count).toFixed(2)} €
         </p>
         <span
