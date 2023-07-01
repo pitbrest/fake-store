@@ -16,7 +16,7 @@ function CartItem(prop) {
     <div className="cartItem flex lg:justify-between justify-around gap-x-2 gap-y-4 lg:gap-10 py-5 w-full items-center flex-wrap lg:flex-nowrap border-b-2 border-neutral-200 ">
       <img src={image} alt="item" className="w-14" />
       <p
-        className="basis-2/5  flex-grow-0 flex-shrink-0 lg:text-lg text-sm"
+        className="basis-2/5  flex-grow-0 flex-shrink-0 lg:text-lg text-sm cursor-pointer"
         onClick={() =>
           navigate(`/catalogue/${category}/${id}`, { state: prop })
         }
